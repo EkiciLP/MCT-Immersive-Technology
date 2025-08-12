@@ -350,6 +350,7 @@ public class TileEntityGasTurbineMaster extends TileEntityGasTurbineSlave implem
     public boolean canDrainTankFrom(int iTank, EnumFacing side, int position) {
         if(input == null) InitializePoIs();
         if(output.isPoI(side, position)) return tanks[1].getFluidAmount() > 0;
+        if(input.isPoI(side, position)) return tanks[0].getFluidAmount() > 0;
         return false;
     }
 
